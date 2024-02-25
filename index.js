@@ -158,14 +158,38 @@ const internQuestions = [
     }
 ];
 
+const addTeamMembers = () => {
+    inquirer
+        .prompt({
+            type: "list",
+            name: "addTeamMember",
+            message: "Would you like to add a team member?",
+            choices: ["Engineer", "Intern", "I don't want to add any more team members"]
+        })
+        .then(answer => {
+            if (answer.addTeamMember === "Engineer") {
+                addEngineer();
+            }
+            else if (answer.addTeamMember === "Intern") {
+                addIntern();
+            }
+            else {
+                console.log("No more team members to add");
+                console.log(teamMembers);
+                console.log("Generating team profile");
+                fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+                console.log("Team profile generated");
+            }
+        });
+}
+
+
 inti = () => {
     inquirer
         .prompt(managerQuestions)
         .then(answers => {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             teamMembers.push(manager);
-            console.log(manager);
-            console.log(teamMembers);
             addTeamMembers();
         }); 
 }
