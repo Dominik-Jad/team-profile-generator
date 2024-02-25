@@ -61,3 +61,99 @@ const managerQuestions = [
         }
     }
 ];
+
+// questions for the user to answer about the engineer 
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the engineer's name?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter a name";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the engineer's id?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter an id";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the engineer's email?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter an email";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's github?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter a github";
+            }
+            return true;
+        }
+    }
+];
+
+// questions for the user to answer about the intern 
+const internQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter a name";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the intern's id?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter an id";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the intern's email?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter an email";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What is the intern's school?",
+        validate:  answer => {
+            if (answer === "") {
+                return "Please enter a school";
+            }
+            return true;
+        }
+    }
+];
