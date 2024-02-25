@@ -183,6 +183,25 @@ const addTeamMembers = () => {
         });
 }
 
+const addEngineer = () => {
+    inquirer
+        .prompt(engineerQuestions)
+        .then(answers => {
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            teamMembers.push(engineer);
+            addTeamMembers();
+        });
+}
+
+const addIntern = () => {
+    inquirer
+        .prompt(internQuestions)
+        .then(answers => {
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            teamMembers.push(intern);
+            addTeamMembers();
+        });
+}
 
 inti = () => {
     inquirer
